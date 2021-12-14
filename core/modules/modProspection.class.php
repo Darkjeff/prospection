@@ -82,7 +82,7 @@ class modProspection extends DolibarrModules
 		'barcode' => false,
 		'models' => false,
 		'css' => array(
-			
+
 		),
 		'js' => array(
 		),
@@ -217,12 +217,12 @@ class modProspection extends DolibarrModules
 				" (17, 'FM_DND', 'Ne pas déranger', '1')"
 			),
 			array('sql' => "INSERT INTO " . MAIN_DB_PREFIX . "c_actioncomm (id, code, type, libelle, module, active, position, color)" .
-				" VALUES (100, 'FM_PROSPECTION', 'user', 'Prospection', 'prospection', 1, 0, '#0EAF9E')"
+				" VALUES (100, 'FM_PROSPECT', 'user', 'Prospection', 'prospection', 1, 0, '#0EAF9E')"
 			)
 		);
 
 		$result = $this->loadTables();
-		
+
 		return $this->_init($sql, $options);
 	}
 

@@ -172,7 +172,7 @@ class Prospection // extends CommonObject
 		$sql .= " SET ".$this->field." = '" . $this->value."'";
 		$sql .= " ,tms = '".$now."'";
         $sql .= " WHERE rowid = " . $this->rowid;
-        
+
 		$this->db->begin();
 
 		dol_syslog ( __METHOD__ . " sql=" . $sql, LOG_DEBUG );
@@ -183,13 +183,13 @@ class Prospection // extends CommonObject
 			}
             $this->db->free ( $resql );
             $this->db->commit();
-			
+
 			return 1;
 		} else {
 			$this->error = "Error " . $this->db->lasterror ();
             dol_syslog ( __METHOD__ . " " . $this->error, LOG_ERR );
             $this->db->rollback();
-			
+
 			return - 1;
 		}
     }
@@ -201,7 +201,7 @@ class Prospection // extends CommonObject
 		$sql = "UPDATE " . MAIN_DB_PREFIX .'societe';
 		$sql .= " SET ".$this->field." = '" . $this->value."'";
         $sql .= " WHERE rowid = " . $this->rowid;
-        
+
 		$this->db->begin();
 
 		dol_syslog ( __METHOD__ . " sql=" . $sql, LOG_DEBUG );
@@ -212,13 +212,13 @@ class Prospection // extends CommonObject
 			}
             $this->db->free ( $resql );
             $this->db->commit();
-			
+
 			return 1;
 		} else {
 			$this->error = "Error " . $this->db->lasterror ();
             dol_syslog ( __METHOD__ . " " . $this->error, LOG_ERR );
             $this->db->rollback();
-			
+
 			return - 1;
 		}
     }
@@ -310,7 +310,7 @@ class Prospection // extends CommonObject
 	}
 
 	public function getProspectionStatus()
-	{		
+	{
 		$sql = "SELECT * ";
 		$sql .= " FROM " . MAIN_DB_PREFIX . "c_stcomm";
 
@@ -386,7 +386,7 @@ class Prospection // extends CommonObject
         $sql.= "100,";
         $sql.= "0,";
         $sql.= "'".$ref."',";
-        $sql.= "'FM_PROSPECTION',";
+        $sql.= "'FM_PROSPECT',";
         $sql.= $this->fk_soc.",";
         $sql.= $this->userid.",";
         $sql.= $this->userid.",";
